@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Box, CircularProgress, Heading, Link, StackDivider, Text, VStack } from "@chakra-ui/react";
+import { Box, CircularProgress, Heading, Link, StackDivider, Text, useToast, VStack } from "@chakra-ui/react";
+import dayjs from "dayjs";
+import { icons } from "../../icons/svgProvider";
 
 interface NewsProps {
 	title: string;
@@ -10,6 +12,7 @@ interface NewsProps {
 
 const NrkFeed: React.FC = () => {
 	const [news, setNews] = useState<NewsProps[] | null>(null);
+	const toast = useToast();
 	
 	useEffect(() => {
 		// @ts-ignore
@@ -20,6 +23,13 @@ const NrkFeed: React.FC = () => {
 			}
 		}).then((res) => res.json()).then((data) => {
 			setNews(data.Feed.channel.item);
+		}).catch((er) => {
+			toast({
+				title: 'Failed to load feed',
+				description: 'Try again later',
+				variant: 'subtle',
+				status: 'error'
+			})
 		})
 	}, [])
 	
@@ -39,14 +49,19 @@ const NrkFeed: React.FC = () => {
 			>
 				{news.map((item) => (
 					<Box>
-						<Box display="flex" justifyContent="space-between" alignItems="stretch" mb={3}>
-							<Heading fontSize={16}>{item.title}</Heading>
-							<Text fontSize={14}>{item.pubDate}</Text>
+						<Box width="100%" display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+							<Heading width={350} fontSize={16}>{item.title}</Heading>
+							<Text m={0} borderBottomColor="red.200" borderBottomWidth={2} color="gray.400" fontSize={14}>{dayjs(item.pubDate).format("HH:MM")}</Text>
 						</Box>
 						<Text fontSize={15}>{item.description}</Text>
-						<Link fontSize={14} fontWeight="bold" href={item.link} isExternal>
-							Les mer
-						</Link>
+						<Box mt={5}>
+							<Link fontSize={14} fontWeight="bold" href={item.link} isExternal display="flex" alignItems="center">
+								Les mer
+								<span style={{ marginLeft: 5 }}>
+									{icons.externalLink}
+								</span>
+							</Link>
+						</Box>
 					</Box>
 				))}
 			</VStack>
