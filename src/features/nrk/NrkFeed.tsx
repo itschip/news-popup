@@ -15,7 +15,6 @@ const NrkFeed: React.FC = () => {
 	const toast = useToast();
 	
 	useEffect(() => {
-		// @ts-ignore
 		fetch(`http://${process.env.RSS_ENDPONT}/nrkFeed`, {
 			method: 'GET',
 			headers: {
@@ -23,7 +22,7 @@ const NrkFeed: React.FC = () => {
 			}
 		}).then((res) => res.json()).then((data) => {
 			setNews(data.Feed.channel.item);
-		}).catch((er) => {
+		}).catch((err) => {
 			toast({
 				title: 'Failed to load feed',
 				description: 'Try again later',
