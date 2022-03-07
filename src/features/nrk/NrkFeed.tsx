@@ -16,7 +16,7 @@ const NrkFeed: React.FC = () => {
 	
 	useEffect(() => {
 		// @ts-ignore
-		fetch('http://localhost:5000/nrkFeed', {
+		fetch('http://46.101.141.111:5000/nrkFeed', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
