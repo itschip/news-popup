@@ -15,7 +15,7 @@ const NrkFeed: React.FC = () => {
 	const toast = useToast();
 	
 	useEffect(() => {
-		fetch(`http://${process.env.RSS_ENDPONT}/nrkFeed`, {
+		fetch(`http://${process.env.REACT_APP_RSS_ENDPOINT}/nrkFeed`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
@@ -41,7 +41,11 @@ const NrkFeed: React.FC = () => {
 	}
 	
 	return (
-		<Box>
+		<Box
+			css={{
+				boxShadow: "0px -18px 33px -11px rgba(0,0,0,0.75) inset"
+			}}
+		>
 			<VStack
 				divider={<StackDivider borderColor='gray.400'/>}
 				spacing={4}
