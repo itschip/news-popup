@@ -4,4 +4,5 @@ A RSS Feed from NRK and VG. Got tired of opening all the diff news pages with th
 PS: For norwegians only
 
 
-<img width="537" alt="Screenshot 2022-03-06 at 18 07 32" src="https://user-images.githubusercontent.com/59088889/156933767-0f891150-52f9-40f1-936e-9da8f1dc3bc5.png">
+
+<img width="533" alt="Screenshot 2022-03-07 at 21 05 41" src="https://user-images.githubusercontent.com/59088889/157109639-b49c09f2-4fab-4d5f-a528-27069eff4864.png">
