@@ -12,7 +12,7 @@ function App() {
 					<Tab>VG</Tab>
 				</TabList>
 				<TabPanels>
-					<TabPanel>
+					<TabPanel css={{ boxShadow: '0px -18px 33px -15px rgba(0,0,0,0.64) inset' }}>
 						<NrkFeed />
 					</TabPanel>
 					<TabPanel>
