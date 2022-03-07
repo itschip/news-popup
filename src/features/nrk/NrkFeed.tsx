@@ -50,7 +50,7 @@ const NrkFeed: React.FC = () => {
 					<Box>
 						<Box width="100%" display="flex" justifyContent="space-between" alignItems="center" mb={3}>
 							<Heading width={350} fontSize={16}>{item.title}</Heading>
-							<Text m={0} borderBottomColor="red.200" borderBottomWidth={2} color="gray.400" fontSize={14}>{dayjs(item.pubDate).format("HH:MM")}</Text>
+							<Text m={0} borderBottomColor="red.200" borderBottomWidth={2} color="gray.400" fontSize={14}>{dayjs(item.pubDate).format("HH:mm")}</Text>
 						</Box>
 						<Text fontSize={15}>{item.description}</Text>
 						<Box mt={5}>

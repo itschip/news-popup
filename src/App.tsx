@@ -6,17 +6,17 @@ import NrkFeed from "./features/nrk/NrkFeed";
 function App() {
 	return (
 		<div className="App">
-			<Tabs variant="enclosed" mt={2}>
+			<Tabs variant="enclosed" mt={2} colorScheme="red">
 				<TabList>
-					<Tab>NRK</Tab>
-					<Tab>VG</Tab>
+					<Tab fontWeight="bold">NRK</Tab>
+					<Tab fontWeight="bold">VG</Tab>
 				</TabList>
 				<TabPanels>
-					<TabPanel css={{ boxShadow: '0px -18px 33px -15px rgba(0,0,0,0.64) inset' }}>
+					<TabPanel>
 						<NrkFeed />
 					</TabPanel>
 					<TabPanel>
-						Loading VG feed
+						VG Feed coming soon
 					</TabPanel>
 				</TabPanels>
 			</Tabs>
